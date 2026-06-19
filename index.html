@@ -13,7 +13,7 @@
   --ink:#0A0C0F;--surface:#111418;--panel:#181C22;--rim:#252A33;--muted:#3A4150;
   --dim:#6B7585;--soft:#9BA8BB;--text:#E8ECF4;
   --gold:#C9A84C;--gold2:#E8C96A;--goldDim:#C9A84C33;--goldRim:#C9A84C55;
-  --green:#22C55E;--red:#EF4444;--blue:#3B82F6;
+  --green:#22C55E;--red:#EF4444;
   --display:"Playfair Display",Georgia,serif;--body:"Inter",system-ui,sans-serif;
   --r:14px;--r-sm:9px;--r-pill:999px;
 }
@@ -25,12 +25,13 @@ select option{background:var(--panel);}
 ::-webkit-scrollbar{width:3px;height:3px;}
 ::-webkit-scrollbar-thumb{background:var(--muted);border-radius:2px;}
 
+/* HEADER */
 .hdr{background:var(--surface);border-bottom:1px solid var(--rim);padding:14px 16px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100;}
 .hdr-logo{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#1a1200,#2d2000);border:1px solid var(--goldRim);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
 .hdr-brand{font-family:var(--display);font-size:18px;font-weight:700;color:var(--gold2);}
 .hdr-sub{font-size:10px;color:var(--dim);letter-spacing:.8px;text-transform:uppercase;margin-top:2px;}
-.tab-row{display:flex;gap:5px;margin-left:auto;}
-.tbtn{padding:8px 12px;border-radius:var(--r-sm);border:none;font-weight:600;font-size:12px;letter-spacing:.3px;transition:all .15s;}
+.tab-row{display:flex;gap:4px;margin-left:auto;}
+.tbtn{padding:7px 10px;border-radius:var(--r-sm);border:none;font-weight:600;font-size:11px;letter-spacing:.3px;transition:all .15s;}
 .tbtn.on{background:var(--gold);color:#0A0C0F;}
 .tbtn.off{background:var(--panel);color:var(--dim);border:1px solid var(--rim);}
 .gold-line{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.4;}
@@ -39,54 +40,54 @@ select option{background:var(--panel);}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(.8);}}
 
 .sum-bar{display:flex;background:var(--surface);border-bottom:1px solid var(--rim);}
-.sum-cell{flex:1;padding:13px 6px;text-align:center;position:relative;}
+.sum-cell{flex:1;padding:12px 4px;text-align:center;position:relative;}
 .sum-cell+.sum-cell::before{content:"";position:absolute;left:0;top:20%;bottom:20%;width:1px;background:var(--rim);}
-.sum-val{font-family:var(--display);font-size:20px;font-weight:700;}
+.sum-val{font-family:var(--display);font-size:19px;font-weight:700;}
 .sum-lbl{font-size:9px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-top:2px;}
 
-.wrap{padding:16px;max-width:700px;margin:0 auto;}
+.wrap{padding:14px;max-width:700px;margin:0 auto;}
 .sec-eyebrow{font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:2px;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
 .sec-eyebrow::after{content:"";flex:1;height:1px;background:var(--rim);}
 
 .bay-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:18px;}
-.bay{border:1px solid var(--rim);border-radius:var(--r);padding:13px 6px;text-align:center;background:var(--panel);transition:border-color .2s;}
+.bay{border:1px solid var(--rim);border-radius:var(--r);padding:12px 6px;text-align:center;background:var(--panel);transition:border-color .2s;}
 .bay.active{border-color:var(--goldRim);background:var(--surface);}
 .bay-num{font-size:9px;color:var(--dim);font-weight:600;letter-spacing:1.5px;text-transform:uppercase;}
-.bay-plate{font-family:var(--display);font-size:13px;font-weight:600;margin-top:4px;}
+.bay-plate{font-family:var(--display);font-size:12px;font-weight:600;margin-top:4px;}
 .bay-svc{font-size:10px;color:var(--dim);margin-top:2px;}
 .bay-empty{font-size:18px;margin-top:6px;opacity:.4;}
 
 .filters{display:flex;gap:6px;margin-bottom:14px;overflow-x:auto;padding-bottom:2px;}
-.fbtn{padding:6px 14px;border-radius:var(--r-pill);border:1px solid var(--rim);font-size:11px;font-weight:600;white-space:nowrap;flex-shrink:0;transition:all .15s;}
+.fbtn{padding:6px 13px;border-radius:var(--r-pill);border:1px solid var(--rim);font-size:11px;font-weight:600;white-space:nowrap;flex-shrink:0;transition:all .15s;}
 .fbtn.on{background:var(--gold);color:var(--ink);border-color:var(--gold);}
 .fbtn.off{background:transparent;color:var(--dim);}
 
-.qcard{background:var(--panel);border-radius:var(--r);padding:14px 15px;margin-bottom:10px;border:1px solid var(--rim);border-left:3px solid var(--gold);position:relative;overflow:hidden;}
+.qcard{background:var(--panel);border-radius:var(--r);padding:13px 14px;margin-bottom:10px;border:1px solid var(--rim);border-left:3px solid var(--gold);position:relative;overflow:hidden;}
 .qcard.new-booking{animation:slideIn .4s ease;}
 @keyframes slideIn{from{opacity:0;transform:translateY(-10px);}to{opacity:1;transform:translateY(0);}}
-.plate-tag{background:var(--ink);border:1px solid var(--muted);border-radius:6px;padding:5px 10px;font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:2px;flex-shrink:0;}
+.plate-tag{background:var(--ink);border:1px solid var(--muted);border-radius:6px;padding:5px 10px;font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:2px;flex-shrink:0;}
 .card-name{font-weight:600;font-size:13px;margin-bottom:3px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
 .card-meta{font-size:11px;color:var(--dim);}
-.pills{display:flex;gap:5px;margin-top:7px;flex-wrap:wrap;}
+.pills{display:flex;gap:5px;margin-top:6px;flex-wrap:wrap;}
 .pill{border-radius:var(--r-pill);font-size:10px;padding:2px 8px;font-weight:600;border:1px solid;}
-.act-row{display:flex;gap:6px;margin-top:12px;flex-wrap:wrap;}
-.abtn{flex:1;padding:9px;border:none;border-radius:var(--r-sm);font-size:12px;font-weight:600;letter-spacing:.2px;transition:all .15s;}
+.act-row{display:flex;gap:6px;margin-top:11px;flex-wrap:wrap;}
+.abtn{flex:1;padding:9px;border:none;border-radius:var(--r-sm);font-size:12px;font-weight:600;transition:all .15s;}
 .abtn.detail{background:var(--surface);color:var(--soft);border:1px solid var(--rim);}
 .abtn.assign{background:linear-gradient(135deg,#1d3461,#2563EB);color:#fff;}
 .abtn.done{background:linear-gradient(135deg,#064e3b,#059669);color:#fff;}
 .abtn.del{flex:0;padding:9px 12px;background:var(--surface);color:var(--muted);border:1px solid var(--rim);border-radius:var(--r-sm);}
-.bdg{border-radius:var(--r-pill);font-size:10px;font-weight:600;padding:3px 10px;white-space:nowrap;letter-spacing:.3px;}
+.bdg{border-radius:var(--r-pill);font-size:10px;font-weight:600;padding:3px 10px;white-space:nowrap;}
 .bdg-w{background:#78350f22;color:#FCD34D;border:1px solid #78350f88;}
 .bdg-p{background:#1e3a8a22;color:#93C5FD;border:1px solid #1e3a8a88;}
 .bdg-d{background:#14532d22;color:#86EFAC;border:1px solid #14532d88;}
 .bdg-new{background:#C9A84C22;color:#C9A84C;border:1px solid #C9A84C88;animation:glow 1.5s infinite alternate;}
 @keyframes glow{from{box-shadow:0 0 4px #C9A84C44;}to{box-shadow:0 0 10px #C9A84C88;}}
-.type-b{background:#1e1b4b;color:#a5b4fc;border-radius:var(--r-pill);font-size:9px;font-weight:700;padding:2px 8px;letter-spacing:.5px;text-transform:uppercase;border:1px solid #312e8166;}
-.type-w{background:#1c0505;color:#fca5a5;border-radius:var(--r-pill);font-size:9px;font-weight:700;padding:2px 8px;letter-spacing:.5px;text-transform:uppercase;border:1px solid #45061066;}
-
-.notif{background:linear-gradient(135deg,#1a1200,#2a1e00);border:1px solid var(--gold);border-radius:var(--r);padding:14px 16px;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+.type-b{background:#1e1b4b;color:#a5b4fc;border-radius:var(--r-pill);font-size:9px;font-weight:700;padding:2px 8px;text-transform:uppercase;border:1px solid #312e8166;}
+.type-w{background:#1c0505;color:#fca5a5;border-radius:var(--r-pill);font-size:9px;font-weight:700;padding:2px 8px;text-transform:uppercase;border:1px solid #45061066;}
+.notif{background:linear-gradient(135deg,#1a1200,#2a1e00);border:1px solid var(--gold);border-radius:var(--r);padding:13px 15px;margin-bottom:13px;display:flex;align-items:center;gap:12px;}
 .notif-dismiss{background:transparent;border:1px solid var(--goldRim);color:var(--gold);border-radius:6px;padding:5px 10px;font-size:11px;font-weight:600;flex-shrink:0;}
 
+/* MODAL */
 .modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:500;align-items:flex-end;justify-content:center;backdrop-filter:blur(4px);}
 .modal-bg.open{display:flex;}
 .modal-sheet{background:var(--surface);border:1px solid var(--rim);border-radius:20px 20px 0 0;width:100%;max-width:640px;max-height:93vh;overflow-y:auto;padding:18px 16px 44px;}
@@ -97,9 +98,8 @@ select option{background:var(--panel);}
 .field input,.field select,.field textarea{width:100%;background:var(--panel);border:1px solid var(--rim);border-radius:var(--r-sm);padding:11px 13px;font-size:14px;outline:none;transition:border-color .15s;}
 .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold);}
 .field textarea{resize:vertical;}
-
 .media-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:13px;}
-.media-lbl{border-radius:var(--r);padding:16px 10px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:4px;background:var(--panel);border:1px solid var(--rim);}
+.media-lbl{border-radius:var(--r);padding:15px 10px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:4px;background:var(--panel);border:1px solid var(--rim);}
 .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;}
 .photo-wrap{position:relative;border-radius:var(--r-sm);overflow:hidden;}
 .photo-wrap img{width:100%;aspect-ratio:1;object-fit:cover;display:block;}
@@ -124,7 +124,7 @@ select option{background:var(--panel);}
 .toast{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:999;color:#fff;padding:10px 20px;border-radius:var(--r-pill);font-weight:600;font-size:13px;box-shadow:0 8px 32px rgba(0,0,0,.6);white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s;border:1px solid rgba(255,255,255,.1);}
 .toast.show{opacity:1;}
 .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;}
-.stat-card{background:var(--panel);border:1px solid var(--rim);border-radius:var(--r);padding:16px 15px;}
+.stat-card{background:var(--panel);border:1px solid var(--rim);border-radius:var(--r);padding:15px 14px;}
 .stat-val{font-family:var(--display);font-size:22px;font-weight:700;}
 .stat-lbl{font-size:10px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:.8px;margin-top:3px;}
 .divider{height:1px;background:var(--rim);margin:16px 0;}
@@ -137,6 +137,23 @@ select option{background:var(--panel);}
 .connecting{position:fixed;inset:0;background:var(--ink);z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;}
 .spinner{width:24px;height:24px;border:2px solid var(--rim);border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite;}
 @keyframes spin{to{transform:rotate(360deg);}}
+
+/* ── SETTINGS ── */
+.svc-setting-card{background:var(--panel);border:1px solid var(--rim);border-radius:var(--r);padding:16px;margin-bottom:12px;position:relative;}
+.svc-color-dot{width:12px;height:12px;border-radius:50%;flex-shrink:0;margin-top:3px;}
+.svc-inputs{display:grid;grid-template-columns:1fr 80px 80px;gap:8px;margin-top:10px;}
+.svc-inp{background:var(--ink);border:1px solid var(--rim);border-radius:var(--r-sm);padding:9px 11px;font-size:13px;outline:none;color:var(--text);width:100%;transition:border-color .15s;}
+.svc-inp:focus{border-color:var(--gold);}
+.svc-inp-label{font-size:9px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px;}
+.del-svc-btn{position:absolute;top:12px;right:12px;background:rgba(239,68,68,.15);border:1px solid #EF444433;color:#F87171;border-radius:6px;padding:4px 9px;font-size:11px;font-weight:600;}
+.add-svc-btn{width:100%;padding:12px;background:var(--panel);border:2px dashed var(--rim);border-radius:var(--r);color:var(--dim);font-size:13px;font-weight:600;margin-bottom:20px;transition:border-color .15s;}
+.add-svc-btn:hover{border-color:var(--gold);color:var(--gold);}
+.settings-inp{width:100%;background:var(--panel);border:1px solid var(--rim);border-radius:var(--r-sm);padding:11px 13px;font-size:14px;outline:none;color:var(--text);transition:border-color .15s;margin-bottom:4px;}
+.settings-inp:focus{border-color:var(--gold);}
+.settings-label{font-size:10px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px;display:block;}
+.color-swatches{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px;}
+.swatch{width:24px;height:24px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:border-color .15s;}
+.swatch.selected{border-color:#fff;}
 </style>
 </head>
 <body>
@@ -156,6 +173,7 @@ select option{background:var(--panel);}
   <button class="lb-close" onclick="closeLB()">✕ Close</button>
 </div>
 
+<!-- DETAIL MODAL -->
 <div class="modal-bg" id="modal" onclick="if(event.target===this)closeModal()">
  <div class="modal-sheet">
   <div class="modal-handle"></div>
@@ -197,30 +215,34 @@ select option{background:var(--panel);}
  </div>
 </div>
 
+<!-- HEADER -->
 <div class="hdr">
   <div class="hdr-logo">🦏</div>
   <div>
-    <div class="hdr-brand">Rhino Shines</div>
+    <div class="hdr-brand" id="hdr-brand">Rhino Shines</div>
     <div class="hdr-sub" id="hdr-date"></div>
   </div>
   <div class="tab-row">
-    <button class="tbtn on"  id="t-queue" onclick="goTab('queue')">Queue</button>
-    <button class="tbtn off" id="t-new"   onclick="goTab('new')">+ Add</button>
-    <button class="tbtn off" id="t-stats" onclick="goTab('stats')">Stats</button>
+    <button class="tbtn on"  id="t-queue"    onclick="goTab('queue')">Queue</button>
+    <button class="tbtn off" id="t-new"      onclick="goTab('new')">+ Add</button>
+    <button class="tbtn off" id="t-stats"    onclick="goTab('stats')">Stats</button>
+    <button class="tbtn off" id="t-settings" onclick="goTab('settings')">⚙️</button>
   </div>
 </div>
 <div class="gold-line"></div>
 <div class="sum-bar" id="sum-bar"></div>
 <div class="gold-line"></div>
+
 <div class="wrap">
   <div id="v-queue"></div>
-  <div id="v-new"   style="display:none;"></div>
-  <div id="v-stats" style="display:none;"></div>
+  <div id="v-new"      style="display:none;"></div>
+  <div id="v-stats"    style="display:none;"></div>
+  <div id="v-settings" style="display:none;"></div>
 </div>
 
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getDatabase, ref, onValue, push, update, remove } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+import { getDatabase, ref, onValue, push, update, remove, set } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAuE5dfJmZQ2d4NfQ_l4wpJ0riMHe2mCbg",
@@ -235,29 +257,35 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db  = getDatabase(app);
-const bookingsRef = ref(db, "bookings");
+const bookingsRef = ref(db,"bookings");
+const settingsRef = ref(db,"settings");
 
-const SVCS=[
+// ── DEFAULT SERVICES (overridden by Firebase settings) ────────────────────────
+const DEFAULT_SVCS = [
   {id:1,name:"Basic Wash",    price:15,dur:20,color:"#60A5FA"},
   {id:2,name:"Full Wash",     price:25,dur:35,color:"#C084FC"},
   {id:3,name:"Premium Detail",price:55,dur:60,color:"#C9A84C"},
   {id:4,name:"Interior Clean",price:40,dur:50,color:"#34D399"},
   {id:5,name:"Polish & Wax",  price:70,dur:75,color:"#F87171"},
 ];
-const PUSPA=["Road Tax","Insurance","Brake Condition","Tyre Condition","Windscreen / Wiper","Lights (Head/Tail)","Engine Condition","Body / Structure","Air-cond","Battery"];
-const BAYS=4;
-const todayStr=new Date().toLocaleDateString("en-MY",{day:"2-digit",month:"short",year:"numeric"});
-const timeNow=()=>new Date().toLocaleTimeString("en-MY",{hour:"2-digit",minute:"2-digit"});
-document.getElementById("hdr-date").textContent=todayStr;
+const COLORS = ["#60A5FA","#C084FC","#C9A84C","#34D399","#F87171","#FB923C","#E879F9","#2DD4BF","#F472B6","#A78BFA"];
+const PUSPA  = ["Road Tax","Insurance","Brake Condition","Tyre Condition","Windscreen / Wiper","Lights (Head/Tail)","Engine Condition","Body / Structure","Air-cond","Battery"];
 
-let Q=[],curTab="queue",curFilter="all",modalId=null;
-let mPhotos=[],mVideos=[],mPuspaOn=false,mChecks={},mMTab="photos";
-let newBookingIds=new Set(),firstLoad=true,fType="walk-in";
+const todayStr = new Date().toLocaleDateString("en-MY",{day:"2-digit",month:"short",year:"numeric"});
+const timeNow  = () => new Date().toLocaleTimeString("en-MY",{hour:"2-digit",minute:"2-digit"});
+document.getElementById("hdr-date").textContent = todayStr;
 
-const getSvc=id=>SVCS.find(s=>s.id===id);
-const occupied=()=>Q.filter(q=>q.status==="in-progress"&&q.bay).map(q=>q.bay);
-const freeBays=()=>Array.from({length:BAYS},(_,i)=>i+1).filter(b=>!occupied().includes(b));
+// ── STATE ─────────────────────────────────────────────────────────────────────
+let Q=[], SVCS=[...DEFAULT_SVCS], BAYS=4, SHOP_NAME="Rhino Shines";
+let curTab="queue", curFilter="all", modalId=null;
+let mPhotos=[], mVideos=[], mPuspaOn=false, mChecks={}, mMTab="photos";
+let newBookingIds=new Set(), firstLoad=true, fType="walk-in";
 
+const getSvc = id => SVCS.find(s=>s.id===id)||DEFAULT_SVCS.find(s=>s.id===id)||{name:"Service",price:0,color:"#C9A84C"};
+const occupied = () => Q.filter(q=>q.status==="in-progress"&&q.bay).map(q=>q.bay);
+const freeBays = () => Array.from({length:BAYS},(_,i)=>i+1).filter(b=>!occupied().includes(b));
+
+// ── TOAST ─────────────────────────────────────────────────────────────────────
 let toastTmr;
 window.showToast=function(msg,color="#C9A84C"){
   const t=document.getElementById("toast");
@@ -265,7 +293,20 @@ window.showToast=function(msg,color="#C9A84C"){
   clearTimeout(toastTmr);toastTmr=setTimeout(()=>t.classList.remove("show"),2400);
 }
 
-// ── LIVE LISTENER ─────────────────────────────────────────────────────────────
+// ── SETTINGS LISTENER ─────────────────────────────────────────────────────────
+onValue(settingsRef,(snap)=>{
+  const s=snap.val();
+  if(s){
+    if(s.services && s.services.length) SVCS=s.services;
+    if(s.bays) BAYS=s.bays;
+    if(s.shopName) SHOP_NAME=s.shopName;
+    document.getElementById("hdr-brand").textContent=SHOP_NAME;
+  }
+  if(curTab==="settings") renderSettings();
+  renderSum();
+});
+
+// ── BOOKINGS LISTENER ─────────────────────────────────────────────────────────
 onValue(bookingsRef,(snapshot)=>{
   const prev=Q.map(q=>q.id);
   Q=[];
@@ -283,17 +324,25 @@ onValue(bookingsRef,(snapshot)=>{
   renderAll();
 });
 
+// ── TAB ───────────────────────────────────────────────────────────────────────
 window.goTab=function(tab){
   curTab=tab;
-  ["queue","new","stats"].forEach(t=>{
+  ["queue","new","stats","settings"].forEach(t=>{
     document.getElementById("t-"+t).className="tbtn "+(t===tab?"on":"off");
     document.getElementById("v-"+t).style.display=t===tab?"block":"none";
   });
   renderAll();
 }
 
-function renderAll(){renderSum();if(curTab==="queue")renderQueue();if(curTab==="new")renderNew();if(curTab==="stats")renderStats();}
+function renderAll(){
+  renderSum();
+  if(curTab==="queue")    renderQueue();
+  if(curTab==="new")      renderNew();
+  if(curTab==="stats")    renderStats();
+  if(curTab==="settings") renderSettings();
+}
 
+// ── SUMMARY ───────────────────────────────────────────────────────────────────
 function renderSum(){
   const w=Q.filter(q=>q.status==="waiting").length;
   const p=Q.filter(q=>q.status==="in-progress").length;
@@ -305,6 +354,7 @@ function renderSum(){
   ].map(s=>`<div class="sum-cell"><div class="sum-val" style="color:${s.c}">${s.v}</div><div class="sum-lbl">${s.l}</div></div>`).join("");
 }
 
+// ── QUEUE ─────────────────────────────────────────────────────────────────────
 function renderQueue(){
   let bH="";
   for(let b=1;b<=BAYS;b++){
@@ -318,11 +368,10 @@ function renderQueue(){
            :`<div class="bay-empty">○</div><div style="font-size:9px;color:var(--muted);margin-top:2px;">Available</div>`}
     </div>`;
   }
-
   const newOnes=Q.filter(q=>newBookingIds.has(q.id));
   const notifH=newOnes.map(q=>`
     <div class="notif">
-      <div style="font-size:24px;">📅</div>
+      <div style="font-size:22px;">📅</div>
       <div style="flex:1;">
         <div style="font-weight:700;font-size:13px;color:var(--gold2);">New Booking — ${q.plate}</div>
         <div style="font-size:11px;color:var(--dim);margin-top:2px;">${q.customer} · ${getSvc(q.service)?.name} · ${q.time}${q.date?" · "+q.date:""}</div>
@@ -366,7 +415,6 @@ function renderQueue(){
       <div class="act-row">${acts}</div>
     </div>`;
   });
-
   document.getElementById("v-queue").innerHTML=`
     <div class="sec-eyebrow"><span class="live-dot"></span>Live Queue</div>
     ${notifH}
@@ -384,6 +432,7 @@ window.assignBay=function(id){
 window.markDone=function(id){update(ref(db,"bookings/"+id),{status:"done",bay:null});showToast("Marked complete ✓");}
 window.removeEntry=function(id){remove(ref(db,"bookings/"+id));showToast("Entry removed","#6B7280");}
 
+// ── ADD FORM ──────────────────────────────────────────────────────────────────
 function renderNew(){
   document.getElementById("v-new").innerHTML=`
     <div style="background:var(--panel);border:1px solid var(--rim);border-radius:var(--r);padding:20px;">
@@ -405,7 +454,6 @@ function renderNew(){
     </div>`;
   setFType(fType);
 }
-
 window.setFType=function(t){
   fType=t;
   const w=document.getElementById("ft-w"),b=document.getElementById("ft-b");if(!w)return;
@@ -426,6 +474,7 @@ window.addEntry=function(){
   showToast("Added to queue ✓");goTab("queue");
 }
 
+// ── STATS ─────────────────────────────────────────────────────────────────────
 function renderStats(){
   const done=Q.filter(q=>q.status==="done").length;
   const rev=Q.filter(q=>q.status==="done").reduce((s,q)=>s+(getSvc(q.service)?.price||0),0);
@@ -452,6 +501,96 @@ function renderStats(){
     </div>`;
 }
 
+// ── SETTINGS ──────────────────────────────────────────────────────────────────
+function renderSettings(){
+  const svcCards=SVCS.map((s,i)=>`
+    <div class="svc-setting-card" id="scard-${i}">
+      <button class="del-svc-btn" onclick="deleteSvc(${i})">✕ Remove</button>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div class="svc-color-dot" id="sdot-${i}" style="background:${s.color};"></div>
+        <div style="font-size:13px;font-weight:700;color:var(--text);">Service ${i+1}</div>
+      </div>
+      <div class="color-swatches">
+        ${COLORS.map(c=>`<div class="swatch ${c===s.color?"selected":""}" style="background:${c};" onclick="setSvcColor(${i},'${c}')"></div>`).join("")}
+      </div>
+      <div class="svc-inputs">
+        <div>
+          <div class="svc-inp-label">Service Name</div>
+          <input class="svc-inp" id="sname-${i}" value="${s.name}" placeholder="e.g. Basic Wash"/>
+        </div>
+        <div>
+          <div class="svc-inp-label">Price (RM)</div>
+          <input class="svc-inp" id="sprice-${i}" type="number" value="${s.price}" min="0" placeholder="0"/>
+        </div>
+        <div>
+          <div class="svc-inp-label">Duration (min)</div>
+          <input class="svc-inp" id="sdur-${i}" type="number" value="${s.dur}" min="1" placeholder="30"/>
+        </div>
+      </div>
+    </div>`).join("");
+
+  document.getElementById("v-settings").innerHTML=`
+    <div class="sec-eyebrow">Business Settings</div>
+
+    <!-- Shop name -->
+    <div style="background:var(--panel);border:1px solid var(--rim);border-radius:var(--r);padding:16px;margin-bottom:16px;">
+      <div class="sec-eyebrow" style="margin-bottom:12px;">Shop Info</div>
+      <span class="settings-label">Business Name</span>
+      <input class="settings-inp" id="set-shopname" value="${SHOP_NAME}" placeholder="Your business name"/>
+      <span class="settings-label" style="margin-top:10px;">Number of Bays</span>
+      <input class="settings-inp" id="set-bays" type="number" value="${BAYS}" min="1" max="20" placeholder="4"/>
+    </div>
+
+    <!-- Services -->
+    <div class="sec-eyebrow">Services & Pricing</div>
+    <div id="svc-cards">${svcCards}</div>
+    <button class="add-svc-btn" onclick="addSvc()">+ Add New Service</button>
+
+    <!-- Save -->
+    <button class="gold-btn" onclick="saveSettings()" style="margin-top:4px;">💾 Save All Settings</button>
+    <div style="font-size:11px;color:var(--dim);text-align:center;margin-top:10px;">Changes will update the booking page for customers too.</div>`;
+}
+
+window.setSvcColor=function(i,color){
+  SVCS[i].color=color;
+  document.getElementById("sdot-"+i).style.background=color;
+  // update swatch selected state
+  const card=document.getElementById("scard-"+i);
+  card.querySelectorAll(".swatch").forEach(sw=>{
+    sw.classList.toggle("selected",sw.style.background===color||sw.style.backgroundColor===color);
+  });
+}
+
+window.deleteSvc=function(i){
+  if(SVCS.length<=1)return showToast("Need at least 1 service","#EF4444");
+  SVCS.splice(i,1);renderSettings();showToast("Service removed");
+}
+
+window.addSvc=function(){
+  const newId=Math.max(...SVCS.map(s=>s.id),0)+1;
+  SVCS.push({id:newId,name:"New Service",price:0,dur:30,color:COLORS[SVCS.length%COLORS.length]});
+  renderSettings();showToast("Service added");
+  // Scroll to bottom
+  setTimeout(()=>document.getElementById("v-settings").scrollIntoView({block:"end"}),100);
+}
+
+window.saveSettings=function(){
+  // Read all values from inputs
+  const shopName=document.getElementById("set-shopname")?.value.trim()||SHOP_NAME;
+  const bays=parseInt(document.getElementById("set-bays")?.value)||4;
+  const updatedSvcs=SVCS.map((s,i)=>({
+    id:s.id,
+    name:document.getElementById("sname-"+i)?.value.trim()||s.name,
+    price:parseFloat(document.getElementById("sprice-"+i)?.value)||0,
+    dur:parseInt(document.getElementById("sdur-"+i)?.value)||30,
+    color:s.color,
+  }));
+  // Save to Firebase
+  set(settingsRef,{shopName,bays,services:updatedSvcs});
+  showToast("✅ Settings saved!");
+}
+
+// ── MODAL ─────────────────────────────────────────────────────────────────────
 window.openModal=function(id){
   const e=Q.find(q=>q.id===id);if(!e)return;
   modalId=id;mPhotos=[...(e.photos||[])];mVideos=[...(e.videos||[])];
@@ -464,7 +603,6 @@ window.openModal=function(id){
       <div style="flex:1;">
         <div style="font-weight:600;font-size:14px;margin-bottom:3px;">${e.customer} ${tbdg}</div>
         <div style="font-size:11px;color:var(--dim);">${svc?.name} · RM ${svc?.price} · ${e.time}${e.phone?" · 📞 "+e.phone:""}${e.date?" · 📆 "+e.date:""}</div>
-        ${e.remarks?`<div style="font-size:11px;color:var(--gold);margin-top:4px;">📝 ${e.remarks}</div>`:""}
       </div>
     </div>`;
   document.getElementById("remarks").value=e.remarks||"";
@@ -481,7 +619,6 @@ window.saveModal=function(){
   });
   showToast("Changes saved ✓");closeModal();
 }
-
 window.setMTab=function(t){
   mMTab=t;
   document.getElementById("mt-p").className="tbtn "+(t==="photos"?"on":"off");
